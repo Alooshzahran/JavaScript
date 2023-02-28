@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+</head>
+
+<body>
+    <fieldset>
+        <label> Your name</label>
+        <input style="margin-left: 30px;" type="text" id="name1">
+        <br>
+        <br>
+        <label> Your Age</label>
+        <input style="margin-left: 36px;" type="text" id="age1">
+
+        <br>
+        <br>
+        <label for="female" style="margin-left: 20px;">female</label>
+        <input id="female" type="radio" name="v1" value="female">
+        <label for="male">male</label>
+        <input id="male" type="radio" name="v1" value="male">
+        <br>
+        <br>
+        <textarea id="description">Breif Description</textarea>
+        <br>
+        <br>
+        <label> Your major</label>
+        <input style="margin-left: 32px;" type="text" id="major">
+        <br>
+        <br>
+        <label> Your University</label>
+        <input type="text" id="uni">
+
+        <br>
+        <br>
+        <!-- <select>
+    <option>C</option>
+    <option>C++</option>
+    <option>python</option>
+   </select> -->
+        <label style="margin-left: 20px;">HTML </label>
+        <input type="checkbox" value="HTML" id="h" name="q">
+        <label>CSS</label>
+        <input type="checkbox" value="CSS" id="c" name="q">
+        <label>JS</label>
+        <input type="checkbox" value="JS" id="j" name="q">
+
+        <br>
+        <br>
+        <button id="submit" style="margin-left: 20px;">Submit</button>
+        <button id="show" style="margin-left: 20px;">Show</button>
+
+
+
+
+
+    </fieldset>
+    <div id="batool" style="display:none ;">
+        <fieldset>
+            <label>name</label>
+            <span style="margin-left: 40px;" id="t1"></span>
+            <br>
+            <br>
+            <label>age</label>
+            <input style="margin-left: 48px;" type="number" ; id="t2">
+            <br>
+            <br>
+            <label>gender</label>
+            <input style="margin-left: 31px;" type="text" ; id="t3">
+            <br>
+            <br>
+            <label>Description</label>
+            <input type="text" ; id="t4">
+            <br>
+            <br>
+            <label>major</label>
+            <input style="margin-left: 40px;" type="text" ; id="t5">
+            <br>
+            <br>
+            <label>university</label>
+            <input style="margin-left: 13px;" type="text" ; id="t6">
+            <br>
+            <br>
+            <label>Languages</label>
+            <input style="margin-left: 13px;" type="text" ; id="t7">
+
+        </fieldset>
+    </div>
+    <script>
+        // localStorage.clear();
+        var x = document.getElementById("name1");
+        var y = document.getElementById("age1");
+
+        //  console.log(gender[0].value)
+        var r = document.getElementById("description");
+        var d = document.getElementById("major");
+        var t = document.getElementById("uni");
+
+
+        // var c = document.getElementById("c ").checked;
+        // var ccc = document.getElementById("c++ ").checked;
+        // var csha = document.getElementById("c# ").checked;
+
+
+        // console.log(x);
+
+
+
+        submit.onclick = function () {
+
+
+
+            localStorage.setItem("name", x.value);
+            localStorage.setItem("age", y.value);
+
+
+            let Gender = ""
+            if (document.getElementById("female").checked) {
+                Gender += document.getElementById("female").value;
+            }
+            else if (document.getElementById("male").checked) {
+                Gender += document.getElementById("male").value;
+            }
+            localStorage.setItem("Gender", Gender);
+
+
+
+            localStorage.setItem("description", r.value);
+            localStorage.setItem("major", d.value);
+            localStorage.setItem("university", t.value);
+
+            var languages = "";
+            if (document.getElementById("h").checked) {
+                languages += document.getElementById("h").value;
+            }
+            if (document.getElementById("c").checked) {
+                languages += document.getElementById("c").value;
+            }
+            if (document.getElementById("j").checked) {
+                languages += document.getElementById("j").value;
+            }
+
+            localStorage.setItem("languages", languages);
+
+
+            t1.value = localStorage.getItem("name");
+            t2.value = localStorage.getItem("age");
+            t3.value = localStorage.getItem("Gender");
+            t4.value = localStorage.getItem("description");
+            t5.value = localStorage.getItem("major");
+            t6.value = localStorage.getItem("university");
+            t7.value = localStorage.getItem("languages");
+            document.getElementById("batool").style.display = "block";
+
+        }
+
+
+    </script>
+</body>
+
+</html>

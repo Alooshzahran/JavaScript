@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- // to store first key (lastname) -->
+    <p id="demo"></p>
+
+    <!-- to store the value of key  -->
+    <p id="demo1"></p>
+
+
+    <p id="demo2"></p>
+    <script>
+
+
+        // setItem
+        localStorage.setItem("firstname", "batool");
+        // getItem
+        document.getElementById("demo").innerHTML = localStorage.getItem("firstname");
+
+        //delete key
+        localStorage.setItem("nice day", "Monday");
+        document.getElementById("demo2").innerHTML=localStorage.getItem("nice day");
+        localStorage.removeItem("nice day");
+        document.getElementById("demo2").innerHTML=localStorage.getItem("nice day");
+
+        // set key 
+        localStorage.lastname = "wq";
+        localStorage.lastname = "wqwwee";
+        //alert(localStorage.lastname);
+
+
+        // get key
+        document.getElementById("demo1").innerHTML = localStorage.lastname;
+
+    </script>
+
+</body>
+
+</html>

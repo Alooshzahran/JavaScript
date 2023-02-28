@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+</head>
+
+<body>
+    <fieldset>
+
+        <label>Subject</label>
+        <input style="margin-left: 30px;" type="text" id="subject">
+        <br>
+        <br>
+        <label>Description</label>
+        <textarea id="des"></textarea>
+        <br>
+        <br>
+        <label style="margin-left: 20px;">Children</label>
+        <input type="checkbox" value="children " id="c" name="q">
+        <label>Adults</label>
+        <input type="checkbox" value="Adults " id="c++" name="q">
+        <label>Others</label>
+        <input type="checkbox" value="others " id="c#" name="q">
+        <br>
+        <br>
+        <label style="margin-left: 20px;">HTML </label>
+        <input type="checkbox" value="HTML " id="html" name="q">
+        <label>CSS</label>
+        <input type="checkbox" value="CSS " id="css" name="q">
+        <label>JS</label>
+        <input type="checkbox" value="JS  " id="js" name="q">
+        <br>
+        <br>
+        <button id="submit" style="margin-left: 20px;">Submit</button>
+
+    </fieldset>
+
+    <br>
+    <br>
+    <br>
+    <form style="display:none ;" id="confirm">
+        <fieldset>
+
+            <label>Subject</label>
+            <input style="margin-left: 30px;" type="text" id="t1">
+            <br>
+            <br>
+            <label>Description</label>
+            <textarea id="t2"></textarea>
+            <br>
+            <br>
+            <label>Languages</label>
+            <input style="margin-left: 20px;" type="text" id="t3" name="q">
+
+            <br>
+            <br>
+            <label>people</label>
+            <input style="margin-left: 45px;" type="text" id="t4" name="q">
+
+
+        </fieldset>
+
+    </form>
+
+    <script>
+        // localStorage.clear();
+        var x = document.getElementById("submit");
+        var y = document.getElementById("subject");
+        var w = document.getElementById("des");
+        x.onclick = function () {
+
+            sessionStorage.setItem("Subject", y.value);
+            sessionStorage.setItem("Description", w.value);
+
+            let people = "";
+            if (document.getElementById("c").checked) {
+                people += document.getElementById("c").value;
+            }
+            if (document.getElementById("c++").checked) {
+                people += document.getElementById("c++").value;
+            }
+            if (document.getElementById("c#").checked) {
+                people += document.getElementById("c#").value;
+            }
+            sessionStorage.setItem("people", people);
+            let languages = "";
+            if (document.getElementById("html").checked) {
+                languages += document.getElementById("html").value;
+            }
+            if (document.getElementById("css").checked) {
+                languages += document.getElementById("css").value;
+            }
+            if (document.getElementById("js").checked) {
+                languages += document.getElementById("js").value;
+            }
+
+            sessionStorage.setItem("languages", languages);
+
+            document.getElementById("confirm").style.display = "block";
+            document.getElementById("t1").value = sessionStorage.getItem("Subject");
+            document.getElementById("t2").value = sessionStorage.getItem("Description");
+            document.getElementById("t3").value = sessionStorage.getItem("languages");
+            document.getElementById("t4").value = sessionStorage.getItem("people");
+
+
+        }
+    </script>
+
+</body>
+
+</html>
