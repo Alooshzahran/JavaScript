@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str1 = prompt("enter first string");
+        var str2 = prompt("enter first string");
+        var str3 = prompt("enter first string");
+        var str4 = prompt("enter first string");
+        document.write(largeststring(str1, str2, str3, str4));
+
+        function largeststring(str1, str2, str3, str4) {
+            if (str1.length > str2.length && str1.length > str3.length && str1.length > str4.length)
+                return str1;
+            else if (str2.length > str1.length && str2.length > str3.length && str2.length > str4.length)
+                return str2;
+            else if (str3.length > str1.length && str3.length > str2.length && str3.length > str4.length)
+                return str3;
+            else
+                return str4;
+
+        }
+    </script>
+</body>
+
+</html>

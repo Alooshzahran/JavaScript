@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    : let obj = {firstName: “Othman”, lastName: “Khasawneh”, age: 31, salary: 550}
+Ex: employeesInfo(obj) 
+Output:  The first name is: Othman
+	The age is: 31
+	The salary is: 550 -->
+    <script>
+        var person = { firstName: 'Othman', lastName: "Khasawneh", age: 31, salary: 550 };
+       let x= getinformation(person);
+        function getinformation({firstName,lastName,age,salary})
+        {
+            document.write("the first name is :" + firstName + "<br>");
+            document.write("the age is :" + person.age + "<br>");
+            document.write("the salary is :" + person.salary + "<br>");
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
