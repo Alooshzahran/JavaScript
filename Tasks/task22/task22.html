@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //valid Parentheses () []
+        var str = "()[][][]([";
+        document.write(para(str));
+        function para(x) {
+            var i = 0;
+            var j = 1;
+            var length = str.length - 1;
+            while (str.length % 2 == 0 && length != 0) {
+                if (str[i] == "(" && str[j] == ")" || (str[i] == "[" && str[j] == "]") || (str[i] == "{" && str[j] == "}"))
+                //console.log(str[1]);
+                {
+                    return true;
+                }
+
+                i+=2;
+                j+=2;
+                length-=2;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select style="display:block ;" onchange="onclickfun(this)">
+        <option>Jordan</option>
+        <option selected>Japan</option>
+        <option>America</option>
+        <option>france</option>
+        <option>India</option>
+    </select>
+    <img id="image" src="japan.jfif" alt="no image" width="200px " height=" 200px">
+
+
+    <script>
+        function onclickfun(p) {
+            var myarray = ["j.jfif", "japan.jfif", "america.jpeg", "france.jfif", "india.jfif"];
+
+
+            var countryName = p.value;
+
+
+            if (countryName == "Jordan")
+
+                document.getElementById("image").src = myarray[0];
+            else if (countryName == "Japan")
+                document.getElementById("image").src = myarray[1];
+            else if (countryName == "America")
+                document.getElementById("image").src = myarray[2];
+            else if (countryName == "france")
+                document.getElementById("image").src = myarray[3];
+            else if (countryName == "India")
+                document.getElementById("image").src = myarray[4]
+            // //else if()
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

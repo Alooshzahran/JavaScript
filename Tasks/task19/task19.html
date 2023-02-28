@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="exercise.js"></script>
+</head>
+
+<body>
+    <p>example of document.getelementby tag name</p>
+    <h2>Coffee</h2>
+    <h2>tea</h2>
+    <h2>juice</h2>
+    <h3 id="tag-h2-"></h3>
+    <hr>
+    <p>example of get element by class name</p>
+    <h2 class="positive">Always Smile , Positivity</h2>
+    <h2 class="positive">It's so easy , only enjoy</h2>
+    <h3 id="enjoy"></h3>
+    <hr>
+    <p>change value of inner html </p>
+    <h2 id="nice">Today need coffee</h2>
+    <hr>
+    <p>change the attribute properity</p>
+    <img id="image" src="coffee.jpg" alt="image of coffee" width="200px" height="200px">
+    <hr>
+    <p>change the style properity of h2 index 4</p>
+    <p id="background-color">A flower is the reproductive part of flowering plants. Flowers are also called the bloom or
+        blossom of a plant. Flowers have petals. Inside the part of the flower that has petals are the parts which
+        produce pollen and seeds.
+
+        In all plants, a flower is usually its most colourful part. We say the plant 'flowers', 'is flowering' or 'is in
+        flower' when this colourful part begins to grow bigger and open out. There are many different kinds of flowers
+        in different areas in the world. Even in the coldest places, for example the Arctic, flowers can grow during a
+        few months.
+
+        Flowers may grow separately on the plant, or they may grow together in an inflorescence.[</p>
+
+    <p>onhover</p>
+    <p id="hover" onclick="onclickonthis(this)" onmouseout="onhovertext(this)">Thanks you</p>
+    <hr>
+    <div>
+        <img id="aya" onclick="ayaclick(this)" src="OIP.jfif" width="200px" height="200px" style="display:block ;">
+        <button onclick="ayaclick(this)"> click</button>
+    </div>
+
+
+    <a id="set" href="https://www.w3schools.com/" target="_blank" style="display:block ; margin:12px">google</a>
+
+    <input id="n1" type="number">
+    <input id="n2" type="number" onchange="onchangetext(this)">
+    <script>
+        const myarray = document.getElementsByTagName("h2");
+        document.getElementById("tag-h2-").innerHTML = ' the index is two' + myarray[2].innerHTML;
+
+        const x = document.getElementsByClassName("positive");
+        document.getElementById("enjoy").innerHTML = "We need psitivity" + x[0].innerHTML;
+
+        document.getElementById("nice").innerHTML = "H-E-L-L-O";
+
+        document.getElementById("image").src = "oip.jfif";
+        document.getElementById("background-color").style.color = "blue";
+        // let e = document.getElementById("hover");
+
+        // e.onclick = fuction()
+        // {
+        //     e.innerHTML = "batool";
+        // }
+        function onclickonthis(p) {
+
+            p.innerHTML = "batool";
+        }
+
+        function onhovertext(p) {
+            p.style.color = "pink";
+        }
+        let i = 0;
+        function ayaclick(p) {
+
+            var array = ["OIP.jfif", "coffee.jpg", "R.jfif", "th.jfif", "th (1).jfif"];
+            if (i > array.length - 1) {
+                i = 0
+            }
+            document.getElementById("aya").src = array[i];
+            i++;
+        }
+
+        document.getElementById("set").setAttribute("href", "https://simple.wikipedia.org/wiki/Flower");
+
+        function onchangetext(p) {
+            var p = document.getElementById("n2").value;
+            var x =document.getElementById("n1");
+            x.value = p * 12
+
+        }
+    </script>
+
+</body>
+
+</html>

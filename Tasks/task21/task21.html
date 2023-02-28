@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- reversenumber -->
+    <script>
+
+        var x = 12321;
+        document.write(po(x));
+        function po(x) {
+            var y = x.toString();
+            console.log(typeof y);
+            var i = 0, j = y.length - 1;
+            while (i <= j) {
+                if (y[i] != y[j]) {
+                    return false;
+                }
+
+                i++;
+                j--;
+            }
+            return true;
+        }
+    // let i=0;
+
+    // var y=x%10;
+    // console.log(y);
+
+    </script>
+</body>
+
+</html>
